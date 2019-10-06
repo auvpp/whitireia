@@ -36,30 +36,26 @@
                                     @endforeach
                                 </select>
                             </td>
-                            <td scope="row">
-                                <select name="approved_credit{{$d->user->id.$s->code}}" id="approved_credit{{$d->user->id.$s->code}}">
-                                    <option value="{{$c->credit}}" selected>{{$c->credit}}</option>
-                                    <option value="0">0</option>      
-                                </select>
-                            </td>
+                            <td scope="row" id="approved_credit{{$d->user->id.$s->code}}"></td>
                             <input type="hidden" id="classdetail{{$d->user->id.$s->code}}" value="{{$d->id}}"/>
                             <td scope="row"><button id="save{{$d->user->id.$s->code}}" class="btn btn-xs btn-danger">Save</button></td>
                         </tr>
 
                         <script>
                             $(document).ready(function(){
+                                $("#approved_credit{{$d->user->id.$s->code}}").html('{{$c->credit}}');
                                 $("#grade{{$d->user->id.$s->code}}").change(function(){
                                     let current_grade = $("#grade{{$d->user->id.$s->code}} option:selected").text();
                                     if (current_grade == 'D' || current_grade == 'F'){
-                                        $("#approved_credit{{$d->user->id.$s->code}}").val(0);
+                                        $("#approved_credit{{$d->user->id.$s->code}}").html(0);
                                     }else{
-                                        $("#approved_credit{{$d->user->id.$s->code}}").val('{{$c->credit}}');
+                                        $("#approved_credit{{$d->user->id.$s->code}}").html('{{$c->credit}}');
                                     }
                                 });
 
                                 $("#save{{$d->user->id.$s->code}}").click(function() {         
                                     let classdetail_id = $("#classdetail{{$d->user->id.$s->code}}").val();
-                                    let approved_credit = $("#approved_credit{{$d->user->id.$s->code}}").val();
+                                    let approved_credit = $("#approved_credit{{$d->user->id.$s->code}}").html();
                                     let grade_id = $("#grade{{$d->user->id.$s->code}}").val();
                                     $.ajax({
                                         type: 'POST',

@@ -178,6 +178,10 @@ class MyClassController extends Controller
                          ->distinct()
                          ->get(['code', 'name', 'credit']);
 
+      $current_term = Course::where('teacher_id', \Auth::user()->id)
+                            ->whereNotIn('current_offered', ['Not offered', 'No longer offered', 'TBA'])
+                            ->first(['current_offered']);
+
       $mystudents = Course::where('teacher_id', \Auth::user()->id)
                           ->whereNotIn('current_offered', ['Not offered', 'No longer offered', 'TBA'])
                           ->with(['classdetails' => function($query){
@@ -198,7 +202,7 @@ class MyClassController extends Controller
       $user = User::with('programme')->find(\Auth::user()->id);
       $grades = Grade::get();
  
-      return view('mycourses.teacher-mycourses',compact('myclasses', 'user', 'grades', 'mystudents'));
+      return view('mycourses.teacher-mycourses',compact('myclasses', 'user', 'grades', 'mystudents', 'current_term'));
     }
     
     public function teacherGrade(Request $request) {
@@ -252,6 +256,10 @@ class MyClassController extends Controller
                          ->distinct()
                          ->get(['code', 'name', 'credit']);
 
+      $current_term = Course::where('teacher_id', $id)
+                            ->whereNotIn('current_offered', ['Not offered', 'No longer offered', 'TBA'])
+                            ->first(['current_offered']);
+
       $mystudents = Course::where('teacher_id', $id)
                           ->whereNotIn('current_offered', ['Not offered', 'No longer offered', 'TBA'])
                           ->with(['classdetails' => function($query){
@@ -265,7 +273,7 @@ class MyClassController extends Controller
       $user = User::with('programme')->find($id);
       $grades = Grade::get();
  
-      return view('mycourses.teacher-mycourses',compact('myclasses', 'user', 'grades', 'mystudents'));
+      return view('mycourses.teacher-mycourses',compact('myclasses', 'user', 'grades', 'mystudents', 'current_term'));
     }
 
 

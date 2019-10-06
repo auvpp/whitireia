@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-10" id="main-container">
             <div class="panel panel-default">
-                <div class="page-panel-title"><h3>@lang('Tutor\'s Courses')</h3></div>
+                <div class="page-panel-title"><h3>@lang('Tutor\'s Courses') ({{$current_term->current_offered}})</h3></div>
                 <div class="panel-body">
                     <div class="row>">
                         <div class="col-sm-8">
