@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\User;
 use App\School;
 use App\Programme;
-use App\MyClass;
-use App\Section;
 use App\Department;
 use Illuminate\Http\Request;
 use App\Http\Requests\SchoolRequest;
@@ -133,7 +131,6 @@ class SchoolController extends Controller
 
     public function update(Request $request, School $school) {
         $school->name = $request->name;
-        $school->about = $request->about;
         $school->save();
 
         return redirect()->route('schools.index');

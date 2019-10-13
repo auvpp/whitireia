@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -57,46 +56,7 @@ class HomeController extends Controller
             $totalCredits += $v->approved_credit;
           }
         }
-        
 
-        // $totalBooks = \Cache::remember('totalBooks-'.$school_id, $minutes, function () use($school_id) {
-        //   return \App\Book::bySchool($school_id)->count();
-        // });
-        // $totalClasses = \Cache::remember('totalClasses-'.$school_id, $minutes, function () use($school_id) {
-        //   return \App\MyClass::bySchool($school_id)->count();
-        // });
-        // $totalSections = \Cache::remember('totalSections-'.$school_id, $minutes, function () use ($classes) {
-        //   return \App\Section::whereIn('class_id', $classes)->count();
-        // });
-        // $notices = \Cache::remember('notices-'.$school_id, $minutes, function () use($school_id) {
-        //   return \App\Notice::bySchool($school_id)
-        //                     ->where('active',1)
-        //                     ->get();
-        // });
-        // $events = \Cache::remember('events-'.$school_id, $minutes, function () use($school_id) {
-        //   return \App\Event::bySchool($school_id)
-        //                   ->where('active',1)
-        //                   ->get();
-        // });
-        // $routines = \Cache::remember('routines-'.$school_id, $minutes, function () use($school_id) {
-        //   return \App\Routine::bySchool($school_id)
-        //                     ->where('active',1)
-        //                     ->get();
-        // });
-        // $syllabuses = \Cache::remember('syllabuses-'.$school_id, $minutes, function () use($school_id) {
-        //   return \App\Syllabus::bySchool($school_id)
-        //                       ->where('active',1)
-        //                       ->get();
-        // });
-        // $exams = \Cache::remember('exams-'.$school_id, $minutes, function () use($school_id) {
-        //   return \App\Exam::bySchool($school_id)
-        //                   ->where('active',1)
-        //                   ->get();
-        // });
-        // if(\Auth::user()->role == 'student')
-        //   $messageCount = \App\Notification::where('student_id',\Auth::user()->id)->count();
-        // else
-        //   $messageCount = 0;
         return view('home',[
           'totalStudents'=>$totalStudents,
           'totalTeachers'=>$totalTeachers,

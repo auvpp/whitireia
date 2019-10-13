@@ -4,9 +4,6 @@ use App\User;
 use App\School;
 use App\Programme;
 use App\Major;
-use App\Term;
-use App\Section;
-use App\Department;
 use App\Qualification;
 use Faker\Generator as Faker;
 

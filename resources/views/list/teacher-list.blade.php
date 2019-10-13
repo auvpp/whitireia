@@ -16,9 +16,7 @@
                  @break($loop->first)
               @endforeach
                 <div class="panel-body">
-                    <!-- @component('components.users-export',['type'=>'teacher'])    
-                    @endcomponent -->
-
+                    
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}

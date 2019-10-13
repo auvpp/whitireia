@@ -8,7 +8,6 @@ use App\Course;
 use App\Grade;
 use App\Http\Resources\ClassResource;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Validator;
 
 class MyClassController extends Controller
 {
@@ -205,7 +204,7 @@ class MyClassController extends Controller
       return view('mycourses.teacher-mycourses',compact('myclasses', 'user', 'grades', 'mystudents', 'current_term'));
     }
     
-    public function teacherGrade(Request $request) {
+    public function studentGrade(Request $request) {
       if (\Auth::user()->role == 'teacher' || \Auth::user()->role == 'admin'){
         $current_classdetail = ClassDetail::find($request->classdetail_id);
         if ($current_classdetail->active == 1){

@@ -9,24 +9,18 @@ use App\Programme;
 use App\Major;
 use App\MyClass;
 use App\ClassDetail;
-use App\Section;
-use App\Department;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
+    // show the view of academic settings
     public function index() {
         if (\Auth::user()->role == 'admin'){
-            // $school      = \Auth::user()->school;
-            // $classes     = MyClass::all();
-            // $sections    = Section::all();
-            // $departments = Department::bySchool(\Auth::user()->school_id)->get();
             $teachers = User::with('programme')
                             ->where('role', 'teacher')
                             ->where('active', 1)
                             ->orderBy('first_name', 'ASC')
                             ->get();
-
             $majors = Major::query()->get();
             $programmes = Programme::query()->get();
             $qualifications = Qualification::query()->get();

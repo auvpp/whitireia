@@ -12,18 +12,10 @@
             <div class="panel panel-default">
               @if(count($users) > 0)
               @foreach ($users as $user)
-                <!-- @if (Session::has('section-attendance'))
-                <ol class="breadcrumb" style="margin-top: 3%;">
-                    <li><a href="{{url('school/sections?att=1')}}" style="color:#3b80ef;">@lang('Classes &amp; Sections')</a></li>
-                    <li class="active">{{ucfirst($user->role)}}s</li>
-                </ol>
-                @endif -->
                 <div class="page-panel-title"><h3>@lang('List of all') {{ucfirst($user->role)}}s</h3></div>
                  @break($loop->first)
               @endforeach
                 <div class="panel-body">
-                    <!-- @component('components.users-export',['type'=>'student'])
-                    @endcomponent -->
 
                     @if (session('status'))
                         <div class="alert alert-success">

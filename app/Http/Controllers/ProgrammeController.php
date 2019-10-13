@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Qualification;
-use Illuminate\Http\Request;
 use App\Services\Programme\ProgrammeService;
 
 class ProgrammeController extends Controller
@@ -15,11 +13,13 @@ class ProgrammeController extends Controller
         $this->programmeService = $programmeService;
     }
     
+    // show the courses of programme Business
     public function showBusiness(){
         $qualifications = $this->programmeService->getQualificationsByBusiness();
         return view('programmes.business', compact('qualifications'));
     }
 
+    // show the courses of programme IT
     public function showIT(){
         $qualifications = $this->programmeService->getQualificationsByIT();
         return view('programmes.it', compact('qualifications'));

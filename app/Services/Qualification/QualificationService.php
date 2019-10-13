@@ -2,8 +2,6 @@
 namespace App\Services\Qualification;
 
 use App\Major;
-use App\Qualification;
-use Illuminate\Support\Facades\DB;
 
 class QualificationService {
 

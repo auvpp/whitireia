@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Major;
-use App\Qualification;
 use App\Services\Qualification\QualificationService;
-use Illuminate\Http\Request;
 
 class QualificationController extends Controller
 {

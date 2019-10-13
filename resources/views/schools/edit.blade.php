@@ -24,20 +24,6 @@
                     </div>
                 </div>
 
-                <div class="form-group{{ $errors->has('about') ? ' has-error' : '' }}">
-                    <label for="about" class="col-md-4 control-label">@lang('About School')</label>
-
-                    <div class="col-md-6">
-                        <textarea id="about" class="form-control" name="about" placeholder="@lang('About School')" required>{{ $school->about }}</textarea>
-
-                        @if ($errors->has('about'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('about') }}</strong>
-                            </span>
-                        @endif
-                    </div>
-                </div>
-
                 <div class="form-group">
                     <div class="col-sm-offset-4 col-sm-8">
                         <a href="{{ route('schools.index') }}" class="btn btn-primary">@lang('Back')</a>

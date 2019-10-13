@@ -30,9 +30,6 @@
                                 @component('components.add-course', ['programmes'=>$programmes, 'qualifications'=>$qualifications, 'majors'=>$majors, 'teachers'=>$teachers])
                                 @endcomponent
                             </div>
-                            <!-- <div class="col-sm-3">
-                                <a href="" type="button" class="btn btn-danger btn-sm">@lang('Arrange Courses')</a>
-                            </div> -->
                             <div class="col-sm-6">
                                 @if ($toggle == 1)
                                 <button class="btn btn-danger btn-sm" id="toggle" value="1">@lang('Close Selection')</button>
@@ -43,11 +40,7 @@
                         </div>  
                         <div class="row">
                             <div class="col-sm-3">
-                                <!-- <small>@lang('Or, Mass upload Excel')</small>
-                                @component('components.excel-upload-form', ['type'=>'student'])
-                                @endcomponent -->
                             </div>
-                            <!-- <div class="col-sm-3"><small>@lang('Arrange courses for teachers.')</small></div> -->
                             <div class="col-sm-6">
                                 @if ($toggle == 1)
                                 <small>@lang('Click the "Close Selection" button to deactivate the course selection system.')</small>
@@ -72,18 +65,6 @@
                                 <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#addTeacherModal">+ @lang('Add Tutor')</button>
                                 @component('components.add-teacher', ['programmes'=>$programmes])
                                 @endcomponent
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <!-- <small>@lang('Or, Mass upload Excel')</small>
-                                @component('components.excel-upload-form', ['type'=>'student'])
-                                @endcomponent -->
-                            </div> 
-                            <div class="col-sm-3">           
-                                <!-- <small>@lang('Or, Mass upload Excel')</small>
-                                @component('components.excel-upload-form', ['type'=>'teacher'])
-                                @endcomponent -->
                             </div>
                         </div>
                     </div>

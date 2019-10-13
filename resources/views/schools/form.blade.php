@@ -27,27 +27,6 @@
                         </div>
                     </div>
 
-                    <!-- <div class="form-group{{ $errors->has('medium') ? ' has-error' : '' }}">
-                        <label for="medium" class="col-md-4 control-label">@lang('School Medium')</label>
-
-                        <div class="col-md-6">
-                            <select id="medium" class="form-control" name="medium">
-                                <option selected="selected">@lang('Bangla')</option>
-                                <option>@lang('English')</option>
-                                <option>@lang('Hindi')</option>
-                                <option>@lang('Spanish')</option>
-                                <option>@lang('Chinese')</option>
-                                <option>@lang('Arabic')</option>
-                            </select>
-
-                            @if ($errors->has('medium'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('medium') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div> -->
-
                     <div class="form-group{{ $errors->has('established') ? ' has-error' : '' }}">
                         <label for="established" class="col-md-4 control-label">@lang('School Established')</label>
 
