@@ -15,8 +15,9 @@
             <div class="panel panel-default">
               <div class="panel-body">
                   @if (session('status'))
-                      <div class="col-sm-8 alert alert-success">
-                          {{ session('status') }}
+                      <div class="col-sm-8 alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        {{ session('status') }}
                       </div>
                   @else
                     @if(count(array($user)) > 0)

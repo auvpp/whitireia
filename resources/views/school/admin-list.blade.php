@@ -13,13 +13,14 @@
             </ul>
         </div>
         <div class="col-md-10" id="main-container">
-						<h2>Admins</h2>
+			<h2>Admins</h2>
 
-						@if (session('status'))
-            <div class="alert alert-success">
-                {{ session('status') }}
-            </div>
-						@endif
+			@if (session('status'))
+			<div class="alert alert-success alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				{{ session('status') }}
+			</div>
+			@endif
 						
             <div class="panel panel-default">
                 @if(count($admins) > 0)
@@ -150,7 +151,7 @@
 																			<label for="editAdminAbout{{$admin->id}}" class="pull-right control-label">@lang('About :')</label>
 																		</div>
 																		<div class="col-sm-4">
-																			<textarea style="width:100%" class="form-control" name="about" rows="1" id="editAdminAbout{{$admin->id}}" value="{{$admin->about}}"></textarea>
+																			<textarea style="width:100%" class="form-control" name="about" rows="1" id="editAdminAbout{{$admin->id}}">{{$admin->about}}</textarea>
 																		</div>
 																	</div>
 

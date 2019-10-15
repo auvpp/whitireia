@@ -136,7 +136,7 @@
                               <label for="adminUserAbout{{$user->id}}" class="pull-right control-label">@lang('About :')</label>
                             </div>
                             <div class="col-sm-4">
-                              <textarea style="width:100%" class="form-control" name="about" rows="1" id="adminUserAbout{{$user->id}}" value="{{$user->about}}"></textarea>
+                              <textarea style="width:100%" class="form-control" name="about" rows="1" id="adminUserAbout{{$user->id}}">{{$user->about}}</textarea>
                             </div>
                           </div>
 
