@@ -20,8 +20,8 @@
               <th scope="col">@lang('Course Code')</th>
               <th scope="col">@lang('Course Name')</th>
               <th scope="col">@lang('Course Level')</th>
-              <th scope="col">@lang('Course Type')</th>
               <th scope="col">@lang('Credits')</th>
+              <th scope="col">@lang('Course Type')</th>
               <th scope="col">@lang('Current Offered')</th>
               <th scope="col">@lang('Next Offered')</th>
               <th scope="col">@lang('Prerequisites')</th>

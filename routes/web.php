@@ -105,7 +105,6 @@ Route::middleware(['auth','admin'])->group(function (){
   Route::get('/programmes/it/{id}', 'CourseController@course');
 
   // edit courses
-  //Route::get('edit/course/{id}','CourseController@edit');
   Route::post('edit/course/{id}','CourseController@update');
 
   // show the selection list of a student or a teacher

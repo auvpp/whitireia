@@ -43,11 +43,6 @@ class User extends Model implements
         return $q->where('role', 'student');
     }
 
-    public function section()
-    {
-        return $this->belongsTo('App\Section');
-    }
-
     /**
      * One user belongs to only one school.
      */
@@ -103,23 +98,6 @@ class User extends Model implements
     {
         return $this->hasMany('App\Course', 'teacher_id', 'id');
     }
-
-    // public function department()
-    // {
-    //     return $this->belongsTo('App\Department','department_id', 'id');
-    // }
-
-    // public function studentInfo(){
-    //     return $this->hasOne('App\StudentInfo','student_id');
-    // }
-
-    // public function studentBoardExam(){
-    //     return $this->hasMany('App\StudentBoardExam','student_id');
-    // }
-
-    // public function notifications(){
-    //     return $this->hasMany('App\Notification','student_id');
-    // }
 
     public function hasRole(string $role): bool
     {
