@@ -16,7 +16,7 @@
         <th scope="col">@lang('Email')</th>
       @if(Auth::user()->role != 'student')
         <th scope="col">@lang('Phone')</th>
-        <th scope="col">@lang('Enrolled Date')</th>
+        <!-- <th scope="col">@lang('Enrolled Date')</th> -->
         <!-- <th scope="col">@lang('Active')</th> -->
       @endif
     </tr>
@@ -297,7 +297,7 @@
         <td><small>{{$user->email}}</small></td>
       @if(Auth::user()->role != 'student')
         <td><small>{{$user->phone_number}}</small></td>
-        <td><small>{{Carbon\Carbon::parse($user->enrolled_date)->format('d-m-Y')}}</small></td>
+        <!-- <td><small>{{Carbon\Carbon::parse($user->enrolled_date)->format('d-m-Y')}}</small></td> -->
       @endif
     </tr>
     @endforeach
